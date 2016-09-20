@@ -11,15 +11,15 @@ public class LibUtils {
         return res;
     }
 
-    public static String methodProtected(String protectedString, int protectedInt) {
+    protected static String methodProtected(String protectedString, int protectedInt) {
         return "Method Protected";
     }
 
-    public static String methodPrivate(String privateString, int privateInt) {
+    private static String methodPrivate(String privateString, int privateInt) {
         return "Method Private";
     }
 
-    public static String methodPackage(String packageString, int packageInt) {
+    static String methodPackage(String packageString, int packageInt) {
         return "Method Package";
     }
 

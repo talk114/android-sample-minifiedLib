@@ -1,13 +1,17 @@
 package com.cocoricostudio.lib_minified;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class MainActivity extends AppCompatActivity {
+import com.cocoricostudio.library.activity.LibActivity;
+import com.cocoricostudio.library.model.LibObject;
+
+public class MainActivity extends LibActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        saySomething("Hello !");
     }
 }

@@ -6,7 +6,7 @@ package com.cocoricostudio.library;
 class LibUtilsPrivate {
 
     static String methodPublic() {
-        return "[Pouet pouet lib utils private]";
+        return "I am in a private package class";
     }
 
 }
