@@ -2,6 +2,7 @@ package com.cocoricostudio.library.activity;
 
 import android.os.Bundle;
 import android.os.PersistableBundle;
+import android.support.annotation.Keep;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.Toast;
@@ -10,6 +11,10 @@ import com.cocoricostudio.library.model.LibObject;
 
 /**
  * Created by Francois Rouault on 20/09/2016.
+ * <p>
+ * Note : @Keep set to {@link LibActivity} keeps everything in LibActivity, even used private/protected/public methods.
+ * <p>
+ * Once you add @Keep to a method (even private package) class name, package name and (of course) the method remains.
  */
 public class LibActivity extends AppCompatActivity {
 
@@ -32,6 +37,23 @@ public class LibActivity extends AppCompatActivity {
         String text = new InnerClass(what).saySomething();
         String textPrivate = new InnerClassPrivatePackaged(what).saySomething();
         Toast.makeText(this, "From public class : " + text + "\nFrom private class : " + textPrivate, Toast.LENGTH_SHORT).show();
+    }
+
+    public void unusedMethodPublic() {
+        Log.v(TAG, "I am unused");
+    }
+
+    protected void unusedMethodProtected() {
+        Log.v(TAG, "I am unused");
+    }
+
+    private void unusedMethodPrivate() {
+        Log.v(TAG, "I am unused");
+    }
+
+    @Keep
+    void unusedMethodPrivatePackage() {
+        Log.v(TAG, "I am unused");
     }
 
     public static class InnerClass {
